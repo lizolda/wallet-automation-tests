@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+import time
 
 
 class CreditCardForm():
@@ -36,9 +37,10 @@ class CreditCardForm():
 
     def get_credit_card_number(self):
         credit_card_input = self.browser.find_element(
-            *self.CREDIT_CARD_INPUT_SELECTOR
+           *self.CREDIT_CARD_INPUT_SELECTOR
         )
-
+      
+        # strip() should be removed after bug is fixed
         return credit_card_input.get_attribute("value").strip()
 
     def input_credit_card_number(self, credit_card_number):
@@ -96,6 +98,8 @@ class CreditCardForm():
             By.XPATH, f'//li[@data-value="{state}"]')
 
         state_element.click()
+        time.sleep(1)
+
 
     def get_state(self):
         state_input = self.browser.find_element(
