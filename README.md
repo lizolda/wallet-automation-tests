@@ -10,7 +10,7 @@ Each test has it's own file, it's readable, easy to maintain and can save a lot 
 
 1. Install dependencies: `python3 -m pip install -r requirements.pip`
 
-_NOTE: On mac you should use  `pip3` and not `python3 -m pip`. It depends on your specific machine
+      _NOTE: On mac you should use  `pip3` and not `python3 -m pip`. It depends on your specific machine_
 
 2. Download and install latest [geckodriver](https://github.com/mozilla/geckodriver/releases)
 
