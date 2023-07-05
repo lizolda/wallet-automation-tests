@@ -14,10 +14,11 @@ def test_add_valid_credit_card(browser, url):
          - Check we now have one card saved
          - Compare card attributes with initial card data
     """
-
+   
     future_date = date.today() + relativedelta(months=3)
 
     wallet_app = WalletApp(browser, url)
+
 
     wallet_app.load()
 
@@ -45,18 +46,18 @@ def test_add_valid_credit_card(browser, url):
 
     assert len(all_credit_cards) == 1, "expected to have one credit card saved"
 
-    expected_credit_card = all_credit_cards[0]
+    actual_saved_credit_card = all_credit_cards[0]
 
-    assert expected_credit_card.nickname == expected_card_info.nickname
+    assert actual_saved_credit_card.nickname == expected_card_info.nickname
 
-    assert expected_credit_card.expiration == expected_card_info.expiration.replace(
+    assert actual_saved_credit_card.expiration == expected_card_info.expiration.replace(
         " ", ""), "expected saved expiration to match input expiration"
 
-    assert expected_credit_card.street_address == expected_card_info.street_address, "expected saved street address to match input street address"
+    assert actual_saved_credit_card.street_address == expected_card_info.street_address, "expected saved street address to match input street address"
 
-    assert expected_credit_card.city == expected_card_info.city, "expected saved city to match input city"
+    assert actual_saved_credit_card.city == expected_card_info.city, "expected saved city to match input city"
 
-    assert expected_credit_card.state == expected_card_info.state, "expected saved state to match input state in address"
+    assert actual_saved_credit_card.state == expected_card_info.state, "expected saved state to match input state in address"
 
-    assert expected_credit_card.credit_card_number == expected_card_info.credit_card_number[
+    assert actual_saved_credit_card.credit_card_number == expected_card_info.credit_card_number[
         -4:], "expected saved credit card number to match input credit card number"
