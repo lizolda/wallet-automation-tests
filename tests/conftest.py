@@ -7,6 +7,7 @@ import selenium.webdriver as webdriver
 def browser():
     b = webdriver.Firefox()
     b.implicitly_wait(20)
+    b.maximize_window()
     yield b
     b.quit()
 
@@ -16,4 +17,5 @@ def url():
     url = os.getenv(
         "WALLET_APP_URL", "http://qa-hiring-test.s3-website.us-east-2.amazonaws.com/")
 
-    yield url
+    return url
+
