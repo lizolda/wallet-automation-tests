@@ -9,6 +9,9 @@ Each test has it's own file, it's readable, easy to maintain and can save a lot 
 ## Installing
 
 1. Install dependencies: `python3 -m pip install -r requirements.pip`
+
+_NOTE: On mac you should use  `pip3` and not `python3 -m pip`. It depends on your specific machine
+
 2. Download and install latest [geckodriver](https://github.com/mozilla/geckodriver/releases)
 
 _NOTE: as selenium is the only dependency it's very easy to dockerize it and run in CI as well_
